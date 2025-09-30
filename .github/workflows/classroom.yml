@@ -12,8 +12,10 @@ jobs:
     if: github.actor != 'github-classroom[bot]'
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4
     
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # trae todos los commits, no solo el último
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
